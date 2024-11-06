@@ -1,0 +1,40 @@
+/* Encabezado */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+/* Logo */
+.header .logo img {
+    width: 80px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    border-radius: 40px;
+}
+
+.header .logo img:hover {
+    transform: scale(1.1);
+}
+
+/* Botón de Inicio */
+.home-button {
+    background-color: #8ec5fc;
+    color: #fff;
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.home-button:hover {
+    background-color: #a6b9ff;
+    transform: scale(1.05);
+}
