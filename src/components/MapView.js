@@ -1,25 +1,32 @@
-import React, { useEffect } from 'react';
-import mapboxgl from 'mapbox-gl';
-import Header from './Header';
+import React from 'react';
+import { Container, Card } from 'react-bootstrap';
+import BackToHomeButton from './BackToHomeButton';
 
-mapboxgl.accessToken = 'YOUR_MAPBOX_ACCESS_TOKEN'; // Reemplaza con tu token de Mapbox
-
-function MapView() {
-    useEffect(() => {
-        const map = new mapboxgl.Map({
-            container: 'map',
-            style: 'mapbox://styles/mapbox/streets-v11',
-            center: [-74.5, 40],
-            zoom: 9
-        });
-
-        // Ejemplo de marcador (reemplaza con datos dinámicos)
-        new mapboxgl.Marker().setLngLat([-74.5, 40]).addTo(map);
-
-        return () => map.remove();
-    }, []);
-
-    return <div id="map" style={{ width: '100%', height: '500px' }}></div>;
-}
+const MapView = () => {
+  return (
+    <Container className="mt-5 d-flex justify-content-center">
+      <Card style={{ width: '100%', maxWidth: '800px' }} className="shadow">
+        <Card.Body>
+          <Card.Title className="text-center mb-4">Mapa de Problemas Reportados</Card.Title>
+          <div
+            id="map-container"
+            style={{
+              width: '100%',
+              height: '400px',
+              background: '#e9ecef',
+              borderRadius: '8px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            <p>El mapa interactivo aparecerá aquí.</p>
+          </div>
+          <BackToHomeButton />
+        </Card.Body>
+      </Card>
+    </Container>
+  );
+};
 
 export default MapView;
